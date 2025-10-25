@@ -23,12 +23,12 @@ public class InvalidLoginTest extends TestBase {
     @DisplayName("Login User with incorrect email and password")
     @ParameterizedTest
     void invalidLoginTest(String email, String password) {
-        header.clickLoginLink();
+        header.clickSignupLoginLink();
         loginPage.isLoginHeaderVisible()
-                 .setLogin(email)
-                 .setPassword(password)
+                 .setLoginEmail(email)
+                 .setLoginPassword(password)
                  .clickLoginButton()
-                 .checkErrorMessage(INVALID_LOGIN_ERROR);
+                 .checkLoginErrorMessage(INVALID_LOGIN_ERROR);
     }
 
 }

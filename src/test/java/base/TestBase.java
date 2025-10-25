@@ -1,9 +1,10 @@
 package base;
 
 import com.codeborne.selenide.Configuration;
+import data.TestData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import pages.LoginPage;
+import pages.SignupLoginPage;
 import pages.components.Header;
 
 import java.time.Duration;
@@ -17,8 +18,9 @@ import static java.time.Duration.ofSeconds;
 
 public class TestBase {
 
-    protected LoginPage loginPage = new LoginPage();
+    protected SignupLoginPage loginPage = new SignupLoginPage();
     protected Header header = new Header();
+    protected TestData testData;
     private static boolean cookiesAccepted = false;
 
     @BeforeAll
@@ -32,6 +34,7 @@ public class TestBase {
 
     @BeforeEach
     public void setUp() {
+        testData = new TestData();
         open("/");
         if (!cookiesAccepted) {
             try {
@@ -41,7 +44,6 @@ public class TestBase {
             }
             catch (Throwable ignored) {}
         }
-
         $(".logo").shouldBe(visible);
     }
 
