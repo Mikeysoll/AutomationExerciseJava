@@ -20,8 +20,8 @@ public class InvalidLoginTest extends TestBase {
             "secondTry@Email,secondTryPassword",
             "thirdTry@Email,thirdTryPassword"
     })
-    @DisplayName("Login User with incorrect email and password")
     @ParameterizedTest
+    @DisplayName("Login User with incorrect email and password")
     void invalidLoginTest(String email, String password) {
         header.clickSignupLoginLink();
         loginPage.isLoginHeaderVisible()

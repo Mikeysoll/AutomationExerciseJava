@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import data.TestData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import pages.ProductsPage;
 import pages.SignupLoginPage;
 import pages.components.Header;
 
@@ -18,6 +19,7 @@ import static java.time.Duration.ofSeconds;
 
 public class TestBase {
 
+    protected ProductsPage productsPage = new ProductsPage();
     protected SignupLoginPage loginPage = new SignupLoginPage();
     protected Header header = new Header();
     protected TestData testData;
