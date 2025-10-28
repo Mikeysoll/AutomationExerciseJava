@@ -9,10 +9,10 @@ import java.util.stream.Stream;
 
 public class ProductSearchTest extends TestBase {
 
-
     static Stream<String> productNames() {
         return Stream.of("Tshirt");
     }
+
     @MethodSource("productNames")
     @ParameterizedTest
     @DisplayName("Search Product")
@@ -20,11 +20,8 @@ public class ProductSearchTest extends TestBase {
 
         header.clickProductsLink();
         productsPage.isProductHeaderVisible()
-                    .searchProduct(productName)
-                    .isSearchHeaderVisible()
-                    .verifyAllProductsVisible();
+                .searchProduct(productName)
+                .isSearchHeaderVisible()
+                .verifyAllProductsVisible();
     }
-
-
-
 }

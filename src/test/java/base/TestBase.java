@@ -30,7 +30,6 @@ public class TestBase {
         Configuration.baseUrl = "https://automationexercise.com";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
 
     }
 

@@ -10,16 +10,17 @@ public class ExistingEmailRegistrationTest extends TestBase {
 
     private static final String EMAIL_EXISTS_ERROR
             = "Email Address already exist!";
+
     @ValueSource(strings = {"TestAccount@yandex.ru"})
     @ParameterizedTest
     @DisplayName("Register User with existing email")
     public void existingEmailRegistrationTest(String email) {
         header.clickSignupLoginLink();
         loginPage.isSignupHeaderVisible()
-                 .setSignupName(testData.fullName)
-                 .setSignupEmail(email)
-                 .clickSignupButton()
-                 .checkSignUpErrorMessage(EMAIL_EXISTS_ERROR);
+                .setSignupName(testData.fullName)
+                .setSignupEmail(email)
+                .clickSignupButton()
+                .checkSignUpErrorMessage(EMAIL_EXISTS_ERROR);
     }
 
 }

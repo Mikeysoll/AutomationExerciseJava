@@ -15,7 +15,7 @@ public class InvalidLoginTest extends TestBase {
 
     private static final String INVALID_LOGIN_ERROR = "Your email or password is incorrect!";
 
-    @CsvSource (value = {
+    @CsvSource(value = {
             "firstTry@Email,firstTryPassword",
             "secondTry@Email,secondTryPassword",
             "thirdTry@Email,thirdTryPassword"
@@ -25,10 +25,10 @@ public class InvalidLoginTest extends TestBase {
     void invalidLoginTest(String email, String password) {
         header.clickSignupLoginLink();
         loginPage.isLoginHeaderVisible()
-                 .setLoginEmail(email)
-                 .setLoginPassword(password)
-                 .clickLoginButton()
-                 .checkLoginErrorMessage(INVALID_LOGIN_ERROR);
+                .setLoginEmail(email)
+                .setLoginPassword(password)
+                .clickLoginButton()
+                .checkLoginErrorMessage(INVALID_LOGIN_ERROR);
     }
 
 }
