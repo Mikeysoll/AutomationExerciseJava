@@ -13,19 +13,19 @@ public class ProductsPage {
 
     private SelenideElement
             productHeader = $(byText("All Products")),
-            searchInput  = $("#search_product"),
+            searchInput = $("#search_product"),
             searchButton = $("#submit_search"),
             searchedProductsHeader = $(byText("Searched Products"));
 
     private ElementsCollection productCards = $$(".col-sm-4");
 
-    public ProductsPage searchProduct(String value){
-        searchInput .setValue(value);
+    public ProductsPage searchProduct(String value) {
+        searchInput.setValue(value);
         searchButton.click();
         return this;
     }
 
-    public ProductsPage isProductHeaderVisible(){
+    public ProductsPage isProductHeaderVisible() {
         productHeader.shouldBe(visible);
         return this;
     }

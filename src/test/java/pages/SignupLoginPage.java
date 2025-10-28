@@ -17,7 +17,7 @@ public class SignupLoginPage {
             loginForm = $(".login-form"),
 
 
-//          ====================== Signup ======================
+    //          ====================== Signup ======================
             signupHeader = $(byText("New User Signup!")),
             signupName = $("[data-qa=\"signup-name\"]"),
             signupEmail = $("[data-qa=\"signup-email\"]"),
@@ -25,34 +25,34 @@ public class SignupLoginPage {
             signupForm = $(".signup-form");
 
 
-//  ====================== Login Actions ======================
+    //  ====================== Login Actions ======================
     public SignupLoginPage isLoginHeaderVisible() {
         loginHeader.shouldBe(visible);
         return this;
     }
 
-    public SignupLoginPage setLoginEmail(String value){
+    public SignupLoginPage setLoginEmail(String value) {
         loginEmailInput.setValue(value);
         return this;
     }
 
-    public SignupLoginPage setLoginPassword(String value){
+    public SignupLoginPage setLoginPassword(String value) {
         loginPasswordInput.setValue(value);
         return this;
     }
 
-    public SignupLoginPage clickLoginButton(){
+    public SignupLoginPage clickLoginButton() {
         loginButton.click();
         return this;
     }
 
-    public SignupLoginPage checkLoginErrorMessage(String value){
+    public SignupLoginPage checkLoginErrorMessage(String value) {
         loginForm.shouldHave(text(value));
         return this;
     }
 
 
-//  ====================== Signup Actions ======================
+    //  ====================== Signup Actions ======================
     public SignupLoginPage isSignupHeaderVisible() {
         signupHeader.shouldBe(visible);
         return this;
@@ -75,12 +75,10 @@ public class SignupLoginPage {
         return this;
     }
 
-    public SignupLoginPage checkSignUpErrorMessage(String value){
+    public SignupLoginPage checkSignUpErrorMessage(String value) {
         signupForm.shouldHave(text(value));
         return this;
     }
-
-
 
 
 }

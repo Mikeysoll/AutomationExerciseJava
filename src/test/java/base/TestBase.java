@@ -43,8 +43,8 @@ public class TestBase {
                 $(byText("Соглашаюсь"))
                         .should(appear, Duration.ofSeconds(3)).click();
                 cookiesAccepted = true;
+            } catch (Throwable ignored) {
             }
-            catch (Throwable ignored) {}
         }
         $(".logo").shouldBe(visible);
     }
