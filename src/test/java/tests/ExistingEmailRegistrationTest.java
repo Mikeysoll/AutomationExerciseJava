@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-@Tag("registration")
+@Tag("first")
 public class ExistingEmailRegistrationTest extends TestBase {
 
     private static final String EMAIL_EXISTS_ERROR

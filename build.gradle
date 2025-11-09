@@ -45,20 +45,8 @@ tasks.withType(Test) {
     }
 }
 
-task registration_test(type: Test) {
+task first_test(type: Test) {
     useJUnitPlatform {
-        includeTags 'registration'
-    }
-}
-
-task login_test(type: Test) {
-    useJUnitPlatform {
-        includeTags 'login'
-    }
-}
-
-task search_test(type: Test) {
-    useJUnitPlatform {
-        includeTags 'search'
+        includeTags 'first'
     }
 }
