@@ -4,13 +4,16 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import data.TestData;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.ProductsPage;
 import pages.SignupLoginPage;
 import pages.components.Header;
 
 import java.time.Duration;
+import java.util.Map;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.visible;
@@ -30,9 +33,19 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://automationexercise.com";
-        Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.remote= System.getProperty("remote",
+                "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        Configuration.browserCapabilities = capabilities;
     }
 
     @BeforeEach
@@ -41,13 +54,22 @@ public class TestBase {
         open("/");
         if (!cookiesAccepted) {
             try {
-                $(byText("Соглашаюсь"))
+                $(".fc-cta-consent")
                         .should(appear, Duration.ofSeconds(3)).click();
                 cookiesAccepted = true;
             } catch (Throwable ignored) {
             }
         }
         $(".logo").shouldBe(visible);
+
+    }
+
+    @AfterEach
+    void tearDown() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource("Page Source");
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
     }
 
 }
