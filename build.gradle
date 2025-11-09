@@ -47,6 +47,6 @@ tasks.withType(Test) {
 
 task first_test(type: Test) {
     useJUnitPlatform {
-        includeTags 'simple'
+        includeTags 'first'
     }
 }
