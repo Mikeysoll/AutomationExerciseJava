@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-@Tag("Search")
+@Tag("search")
 public class ProductSearchTest extends TestBase {
 
     static Stream<String> productNames() {
