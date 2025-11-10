@@ -54,10 +54,12 @@ public class TestBase {
     public void setUp() {
         testData = new TestData();
 
-        try {
-            $(".fc-cta-consent")
-                    .should(appear, Duration.ofSeconds(3)).click();
-        } catch (Throwable ignored) {
+        // Закрываем окно куки только один раз
+        if (!cookiesAccepted) {
+            if ($(".fc-cta-consent").exists()) {
+                $(".fc-cta-consent").click();
+            }
+            cookiesAccepted = true;
         }
 
         $(".logo").shouldBe(visible);
