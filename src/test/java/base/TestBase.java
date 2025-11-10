@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import data.TestData;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,12 +46,13 @@ public class TestBase {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
+
+        open("/");
     }
 
     @BeforeEach
     public void setUp() {
         testData = new TestData();
-        open("/");
 
         try {
             $(".fc-cta-consent")
@@ -66,6 +68,10 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource("Page Source");
         Attach.browserConsoleLogs();
+    }
+
+    @AfterAll
+    static void afterAll() {
         Attach.addVideo();
         closeWebDriver();
     }
