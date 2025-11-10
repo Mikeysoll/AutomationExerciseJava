@@ -48,11 +48,6 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
         open("/");
-    }
-
-    @BeforeEach
-    public void setUp() {
-        testData = new TestData();
 
         try {
             $(".fc-cta-consent")
@@ -61,6 +56,11 @@ public class TestBase {
         }
 
         $(".logo").shouldBe(visible);
+    }
+
+    @BeforeEach
+    public void setUp() {
+        testData = new TestData();
     }
 
     @AfterEach
