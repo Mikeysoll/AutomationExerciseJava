@@ -28,7 +28,6 @@ public class TestBase {
     protected SignupLoginPage loginPage = new SignupLoginPage();
     protected Header header = new Header();
     protected TestData testData;
-    private static boolean cookiesAccepted = false;
 
     @BeforeAll
     static void beforeAll() {
@@ -71,7 +70,7 @@ public class TestBase {
     }
 
     @AfterAll
-    static void afterAll() {
+    static void videoReport() {
         Attach.addVideo();
         closeWebDriver();
     }
