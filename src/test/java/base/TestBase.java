@@ -18,8 +18,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static java.time.Duration.ofSeconds;
 
 public class TestBase {
@@ -70,6 +69,7 @@ public class TestBase {
         Attach.pageSource("Page Source");
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        closeWebDriver();
     }
 
 }
