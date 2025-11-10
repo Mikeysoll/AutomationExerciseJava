@@ -51,16 +51,14 @@ public class TestBase {
     public void setUp() {
         testData = new TestData();
         open("/");
-        if (!cookiesAccepted) {
-            try {
-                $(".fc-cta-consent")
-                        .should(appear, Duration.ofSeconds(3)).click();
-                cookiesAccepted = true;
-            } catch (Throwable ignored) {
-            }
-        }
-        $(".logo").shouldBe(visible);
 
+        try {
+            $(".fc-cta-consent")
+                    .should(appear, Duration.ofSeconds(3)).click();
+        } catch (Throwable ignored) {
+        }
+
+        $(".logo").shouldBe(visible);
     }
 
     @AfterEach
