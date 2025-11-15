@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+@Tag("first")
 public class ProductSearchTest extends TestBase {
 
     static Stream<String> productNames() {
