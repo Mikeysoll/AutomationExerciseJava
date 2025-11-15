@@ -36,8 +36,8 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.remote= System.getProperty("remote",
-                "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        // Configuration.remote = System.getProperty("remote",
+        //                          "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -50,7 +50,7 @@ public class TestBase {
 
         try {
             $(".fc-cta-consent")
-                    .should(appear, Duration.ofSeconds(2)).click();
+                    .should(appear, Duration.ofSeconds(10)).click();
         } catch (Throwable ignored) {
         }
 
