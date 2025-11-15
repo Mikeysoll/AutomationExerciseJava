@@ -50,3 +50,15 @@ task first_test(type: Test) {
         includeTags 'first'
     }
 }
+
+task second_test(type: Test) {
+    useJUnitPlatform {
+        includeTags 'second'
+    }
+}
+
+task third_test(type: Test) {
+    useJUnitPlatform {
+        includeTags 'third'
+    }
+}

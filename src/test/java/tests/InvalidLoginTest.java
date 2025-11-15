@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-@Tag("first")
+@Tag("second")
 public class InvalidLoginTest extends TestBase {
 
     private static final String INVALID_LOGIN_ERROR = "Your email or password is incorrect!";
