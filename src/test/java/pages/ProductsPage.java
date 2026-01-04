@@ -17,7 +17,8 @@ public class ProductsPage {
             searchButton = $("#submit_search"),
             searchedProductsHeader = $(byText("Searched Products"));
 
-    private ElementsCollection productCards = $$(".col-sm-4");
+    private ElementsCollection
+            productCards = $$(".col-sm-4");
 
     public ProductsPage searchProduct(String value) {
         searchInput.setValue(value);

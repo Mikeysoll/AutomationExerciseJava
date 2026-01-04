@@ -1,16 +1,11 @@
 package tests;
 
 import base.TestBase;
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 
 public class InvalidLoginTest extends TestBase {
 
@@ -24,12 +19,29 @@ public class InvalidLoginTest extends TestBase {
     @ParameterizedTest
     @DisplayName("Login User with incorrect email and password")
     void invalidLoginTest(String email, String password) {
-        header.clickSignupLoginLink();
-        loginPage.isLoginHeaderVisible()
-                .setLoginEmail(email)
-                .setLoginPassword(password)
-                .clickLoginButton()
-                .checkLoginErrorMessage(INVALID_LOGIN_ERROR);
-    }
 
+        step("Click on Signup/Login link in header", () ->
+                header.clickSignupLoginLink()
+        );
+
+        step("Verify Login header is visible", () ->
+                loginPage.isLoginHeaderVisible()
+        );
+
+        step("Set login email", () ->
+                loginPage.setLoginEmail(email)
+        );
+
+        step("Set login password", () ->
+                loginPage.setLoginPassword(password)
+        );
+
+        step("Click Login button", () ->
+                loginPage.clickLoginButton()
+        );
+
+        step("Verify error message for invalid login", () ->
+                loginPage.checkLoginErrorMessage(INVALID_LOGIN_ERROR)
+        );
+    }
 }
