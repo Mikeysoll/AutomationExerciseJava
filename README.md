@@ -8,7 +8,6 @@
 * <a href="#cases">Реализованные проверки</a>
 * <a href="#console">Запуск тестов из терминала</a>
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
-* <a href="#allureRes">Allure</a>
 * <a href="#allure">Отчеты в Allure</a>
 * <a href="#testops">Интеграция с Allure TestOps</a>
 * <a href="#testops">Интеграция с Jira</a>
@@ -135,8 +134,8 @@ clean test
 <img src="images/screenshots/JenkinsJob.png"/>
 </p>
 
-<a id="allureRes"></a>
-## Allure-отчет
+<a id="allure"></a>
+## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-Jenny_Ndbn-java-24-webinar-final-project/8/allure/"> Allure report </a> 
 
 Allure-отчет включает в себя:
 
@@ -147,12 +146,8 @@ Allure-отчет включает в себя:
   - Скриншоты страниц в момент завершения автотеста  
   - Page Source  
   - Логи браузерной консоли  
-  - Видео выполнения автотеста 
-
-
-<a id="allure"></a>
-## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-Jenny_Ndbn-java-24-webinar-final-project/8/allure/"> Allure report </a> 
-
+  - Видео выполнения автотеста
+  - 
 ### Основное окно
 
 <p align="center">
