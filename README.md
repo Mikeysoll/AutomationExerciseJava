@@ -161,3 +161,10 @@ clean test
 <p align="center">
 <img src="images/screenshots/AllureGraphs.png">
 </p>
+
+<a id="telegram"></a>
+## Уведомления в Telegram с использованием бота
+
+<p>
+<img src="images/screenshots/TelegramBot.png">
+</p>
