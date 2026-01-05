@@ -59,11 +59,11 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource("Page Source");
         Attach.browserConsoleLogs();
+        closeWebDriver();
     }
 
     @AfterAll
-    static void closeBrowser() {
+    static void addVideo() {
         Attach.addVideo();
-        closeWebDriver();
     }
 }
