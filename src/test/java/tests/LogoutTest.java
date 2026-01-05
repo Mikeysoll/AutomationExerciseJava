@@ -19,11 +19,11 @@ public class LogoutTest extends TestBase {
     void logoutTest(String userName, String userEmail, String userPassword) {
 
         step("Verify that home page is visible", () ->
-                homePage.isHomePageVisible()
+                homePage.checkHomePageVisible()
         );
 
         step("Open login page", () -> {
-            header.clickSignupLoginLink();
+            header.clickSignupLoginButton();
             loginPage.isLoginHeaderVisible();
         });
 

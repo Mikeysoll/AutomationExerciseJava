@@ -13,12 +13,12 @@ public class RegisterUserTest extends TestBase {
     public void registerUserTest() {
 
         step("Verify that home page is visible ", () ->
-                homePage.isHomePageVisible()
+                homePage.checkHomePageVisible()
         );
 
         step("Open Registration page", () -> {
-            header.clickSignupLoginLink();
-            loginPage.isSignupHeaderVisible();
+            header.clickSignupLoginButton();
+            loginPage.checkSignupHeaderVisible();
         });
 
         step("Enter name and email address", () -> {

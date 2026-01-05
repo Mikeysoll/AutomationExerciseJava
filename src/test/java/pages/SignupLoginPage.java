@@ -53,7 +53,7 @@ public class SignupLoginPage {
 
 
     //  ====================== Signup Actions ======================
-    public SignupLoginPage isSignupHeaderVisible() {
+    public SignupLoginPage checkSignupHeaderVisible() {
         signupHeader.shouldBe(visible);
         return this;
     }

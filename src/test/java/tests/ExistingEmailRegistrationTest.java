@@ -2,8 +2,6 @@ package tests;
 
 import base.TestBase;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -19,11 +17,11 @@ public class ExistingEmailRegistrationTest extends TestBase {
     public void existingEmailRegistrationTest(String email) {
 
         step("Click on Signup/Login link in header", () ->
-                header.clickSignupLoginLink()
+                header.clickSignupLoginButton()
         );
 
         step("Verify Signup header is visible", () ->
-                loginPage.isSignupHeaderVisible()
+                loginPage.checkSignupHeaderVisible()
         );
 
         step("Set signup name", () ->

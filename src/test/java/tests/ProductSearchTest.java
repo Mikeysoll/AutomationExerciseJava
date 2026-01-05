@@ -21,7 +21,7 @@ public class ProductSearchTest extends TestBase {
     void searchProductTest(String productName) {
 
         step("Click on Products link in header", () ->
-                header.clickProductsLink()
+                header.clickProductsButton()
         );
 
         step("Verify Products header is visible", () ->

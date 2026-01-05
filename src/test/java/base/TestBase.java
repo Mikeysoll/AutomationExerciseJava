@@ -6,10 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.AccountInfoPage;
-import pages.HomePage;
-import pages.ProductsPage;
-import pages.SignupLoginPage;
+import pages.*;
 import pages.components.Header;
 
 import java.time.Duration;
@@ -27,6 +24,7 @@ public class TestBase {
     protected SignupLoginPage loginPage = new SignupLoginPage();
     protected HomePage homePage = new HomePage();
     protected AccountInfoPage accountInfoPage = new AccountInfoPage();
+    protected ContactPage contactPage = new ContactPage();
     protected Header header = new Header();
     protected TestData testData;
 

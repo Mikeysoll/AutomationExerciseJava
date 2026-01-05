@@ -33,4 +33,7 @@ public class TestData {
     public String city = faker.address().cityName();
     public String zipcode = faker.address().zipCode();
     public String mobileNumber = faker.phoneNumber().cellPhone();
+    public String message = faker.lorem().paragraph();
+    public String subject = faker.lorem().sentence(5);
+
 }

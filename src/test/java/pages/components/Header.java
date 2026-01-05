@@ -4,11 +4,11 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class Header {
-    public void clickSignupLoginLink() {
+    public void clickSignupLoginButton() {
         $(".nav.navbar-nav a[href='/login']").click();
     }
 
-    public void clickProductsLink() {
+    public void clickProductsButton() {
         $(".nav.navbar-nav a[href=\"/products\"]").click();
     }
 
@@ -20,5 +20,9 @@ public class Header {
 
     public void clickLogoutButton() {
         $("a[href='/logout']").click();
+    }
+
+    public void clickContactUsButton() {
+        $(".fa.fa-envelope").click();
     }
 }

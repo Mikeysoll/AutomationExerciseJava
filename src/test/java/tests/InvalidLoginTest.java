@@ -21,7 +21,7 @@ public class InvalidLoginTest extends TestBase {
     void invalidLoginTest(String email, String password) {
 
         step("Click on Signup/Login link in header", () ->
-                header.clickSignupLoginLink()
+                header.clickSignupLoginButton()
         );
 
         step("Verify Login header is visible", () ->

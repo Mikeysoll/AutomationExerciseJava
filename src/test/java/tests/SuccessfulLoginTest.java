@@ -19,11 +19,11 @@ public class SuccessfulLoginTest extends TestBase {
     void successfulLoginTest(String userName, String userEmail, String userPassword) {
 
         step("Verify that home page is visible", () ->
-                homePage.isHomePageVisible()
+                homePage.checkHomePageVisible()
         );
 
         step("Open Registration page and login", () -> {
-            header.clickSignupLoginLink();
+            header.clickSignupLoginButton();
             loginPage.isLoginHeaderVisible()
                     .setLoginEmail(userEmail)
                     .setLoginPassword(userPassword)
