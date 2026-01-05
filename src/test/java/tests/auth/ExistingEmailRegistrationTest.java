@@ -1,7 +1,8 @@
-package tests;
+package tests.auth;
 
 import base.TestBase;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -13,6 +14,7 @@ public class ExistingEmailRegistrationTest extends TestBase {
 
     @ValueSource(strings = {"TestAccount@yandex.ru"})
     @ParameterizedTest
+    @Tag("auth")
     @DisplayName("Register User with existing email")
     public void existingEmailRegistrationTest(String email) {
 

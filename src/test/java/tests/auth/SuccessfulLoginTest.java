@@ -1,4 +1,4 @@
-package tests;
+package tests.auth;
 
 import base.TestBase;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,7 +15,7 @@ public class SuccessfulLoginTest extends TestBase {
     @CsvSource({
             "Test, testaccount@test.ru, testaccount@test.ru"
     })
-    @Tag("smoke")
+    @Tag("auth")
     void successfulLoginTest(String userName, String userEmail, String userPassword) {
 
         step("Verify that home page is visible", () ->

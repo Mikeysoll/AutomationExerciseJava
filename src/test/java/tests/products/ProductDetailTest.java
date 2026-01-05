@@ -1,7 +1,8 @@
-package tests;
+package tests.products;
 
 import base.TestBase;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -9,6 +10,7 @@ import static io.qameta.allure.Allure.step;
 public class ProductDetailTest extends TestBase {
 
     @Test
+    @Tag("products")
     @DisplayName("Verify All Products and product detail page")
     public void verifyAllProductsAndProductDetailPageTest() {
 

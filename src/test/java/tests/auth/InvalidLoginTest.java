@@ -1,7 +1,8 @@
-package tests;
+package tests.auth;
 
 import base.TestBase;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -11,6 +12,7 @@ public class InvalidLoginTest extends TestBase {
 
     private static final String INVALID_LOGIN_ERROR = "Your email or password is incorrect!";
 
+    @Tag("auth")
     @CsvSource(value = {
             "firstTry@Email,firstTryPassword",
             "secondTry@Email,secondTryPassword",

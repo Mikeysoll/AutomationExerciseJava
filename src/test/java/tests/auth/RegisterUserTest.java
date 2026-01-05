@@ -1,14 +1,17 @@
-package tests;
+package tests.auth;
 
 import base.TestBase;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
 public class RegisterUserTest extends TestBase {
 
+
     @Test
+    @Tag("auth")
     @DisplayName("Verify that home page is visible successfully")
     public void registerUserTest() {
 
