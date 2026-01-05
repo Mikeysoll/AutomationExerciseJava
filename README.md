@@ -53,6 +53,7 @@
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.png" width="50"/></a>
 </div>
 
+
 Автотесты в этом проекте написаны на Java с использованием фреймворка [Selenide](https://selenide.org/).\
 <code>Gradle</code> — используется как инструмент автоматизации сборки.\
 <code>JUnit5</code> — для выполнения тестов.\
@@ -97,9 +98,48 @@ Allure-отчет включает в себя:
 
 :heavy_check_mark: Проверка подписки (Subscription) на главной странице
 
+<a id="console"></a>
+##  Запуск тестов из терминала
+### Локальный запуск тестов
+#### WEB
 
+```
+gradle clean ui_test 
+```
 
+#### API
 
+```
+gradle clean api_test 
+```
+
+### Удаленный запуск тестов
+
+```
+clean test 
+  -Dbrowser=${BROWSER} 
+  -DbrowserVersion=${BROWSER_VERSION} 
+  -DbrowserSize=${BROWSER_SIZE} 
+  -DremoteUrl=${REMOTE_URL}
+  -DenvMobile=${ENV_MOBILE}
+```
+
+> `${BROWSER}` - наименование браузера (_по умолчанию - <code>chrome</code>_).
+> 
+> `${BROWSER_VERSION}` - номер версии браузера (_по умолчанию - <code>128.0</code>_).
+> 
+> `${BROWSER_SIZE}` - размер окна браузера (_по умолчанию - <code>1980x1080</code>_).
+>
+> `${REMOTE_URL}` - адрес удаленного сервера, на котором будут запускаться тесты.
+
+<a id="jenkins"></a>
+## Запуск тестов в <a target="_blank" href="https://jenkins.autotests.cloud/job/AutomationExerciseJava/"> Jenkins </a>
+
+> Сборка с параметрами позволяет перед запуском изменить параметры для сборки (путем выбора из списка или прямым указанием значения).
+
+<p align="center">
+<img src="images/screenshots/JenkinsJob.PNG"/>
+</p>
 
 
 
