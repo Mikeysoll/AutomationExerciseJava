@@ -32,6 +32,7 @@ public class TestBase {
         browser = System.getProperty("browser", "chrome");
         browserVersion = System.getProperty("browserVersion", "128.0");
         browserSize = System.getProperty("browserSize", "1920x1080");
+        holdBrowserOpen = true;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

@@ -25,7 +25,7 @@ public class ProductSearchTest extends TestBase {
         );
 
         step("Verify Products header is visible", () ->
-                productsPage.isProductHeaderVisible()
+                productsPage.checkProductHeaderVisible()
         );
 
         step("Search for product: " + productName, () ->
@@ -33,7 +33,7 @@ public class ProductSearchTest extends TestBase {
         );
 
         step("Verify Search header is visible", () ->
-                productsPage.isSearchHeaderVisible()
+                productsPage.checkSearchHeaderVisible()
         );
 
         step("Verify all products are visible", () ->

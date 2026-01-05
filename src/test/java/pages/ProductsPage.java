@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
@@ -15,7 +14,11 @@ public class ProductsPage {
             productHeader = $(byText("All Products")),
             searchInput = $("#search_product"),
             searchButton = $("#submit_search"),
-            searchedProductsHeader = $(byText("Searched Products"));
+            searchedProductsHeader = $(byText("Searched Products")),
+            viewProductButton = $("a[href='/product_details/1']"),
+            productInformation = $(".product-information"),
+            addToCardButton = $("[type=\"button\"]"),
+            quantityField = $("#quantity");
 
     private ElementsCollection
             productCards = $$(".col-sm-4");
@@ -26,18 +29,38 @@ public class ProductsPage {
         return this;
     }
 
-    public ProductsPage isProductHeaderVisible() {
+    public ProductsPage checkProductHeaderVisible() {
         productHeader.shouldBe(visible);
         return this;
     }
 
-    public ProductsPage isSearchHeaderVisible() {
+    public ProductsPage checkSearchHeaderVisible() {
         searchedProductsHeader.shouldBe(visible);
         return this;
     }
 
     public ProductsPage verifyAllProductsVisible() {
         productCards.forEach(card -> card.shouldBe(visible));
+        return this;
+    }
+
+    public ProductsPage openProductDetails() {
+            viewProductButton.click();
+            return  this;
+    }
+
+    public ProductsPage checkProductInformation() {
+        productInformation.shouldBe(visible);
+        return this;
+    }
+
+    public ProductsPage checkAddToCardButton() {
+        addToCardButton.shouldBe(visible);
+        return  this;
+    }
+
+    public ProductsPage checkQuantityField() {
+        quantityField.shouldBe(visible);
         return this;
     }
 }
