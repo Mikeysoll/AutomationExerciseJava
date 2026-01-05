@@ -103,7 +103,13 @@ Allure-отчет включает в себя:
 #### WEB
 
 ```
-gradle clean ui_tests
+gradle clean ui_test 
+```
+
+#### API
+
+```
+gradle clean api_test 
 ```
 
 ### Удаленный запуск тестов
