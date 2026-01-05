@@ -25,4 +25,8 @@ public class Header {
     public void clickContactUsButton() {
         $(".fa.fa-envelope").click();
     }
+
+    public void clickTestCasesButton() {
+        $("a[href=\"/test_cases\"]").click();
+    }
 }
