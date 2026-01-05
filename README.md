@@ -150,3 +150,10 @@ clean test
 <img src="images/screenshots/AllureOverview.png">
 </p>
 
+### Тесты
+
+<p align="center">
+<img src="images/screenshots/AllureBehaviors.png">
+</p>
+
+### Графики
