@@ -106,7 +106,24 @@ Allure-отчет включает в себя:
 gradle clean ui_test 
 ```
 
+### Удаленный запуск тестов
 
+```
+clean test 
+  -Dbrowser=${BROWSER} 
+  -DbrowserVersion=${BROWSER_VERSION} 
+  -DbrowserSize=${BROWSER_SIZE} 
+  -DremoteUrl=${REMOTE_URL}
+  -DenvMobile=${ENV_MOBILE}
+```
+
+> `${BROWSER}` - наименование браузера (_по умолчанию - <code>chrome</code>_).
+> 
+> `${BROWSER_VERSION}` - номер версии браузера (_по умолчанию - <code>100.0</code>_).
+> 
+> `${BROWSER_SIZE}` - размер окна браузера (_по умолчанию - <code>1980x1080</code>_).
+>
+> `${REMOTE_URL}` - адрес удаленного сервера, на котором будут запускаться тесты.
 
 
 
