@@ -103,7 +103,7 @@ Allure-отчет включает в себя:
 #### WEB
 
 ```
-gradle clean ui_test 
+gradle clean ui_tests
 ```
 
 ### Удаленный запуск тестов
@@ -119,7 +119,7 @@ clean test
 
 > `${BROWSER}` - наименование браузера (_по умолчанию - <code>chrome</code>_).
 > 
-> `${BROWSER_VERSION}` - номер версии браузера (_по умолчанию - <code>100.0</code>_).
+> `${BROWSER_VERSION}` - номер версии браузера (_по умолчанию - <code>128.0</code>_).
 > 
 > `${BROWSER_SIZE}` - размер окна браузера (_по умолчанию - <code>1980x1080</code>_).
 >
