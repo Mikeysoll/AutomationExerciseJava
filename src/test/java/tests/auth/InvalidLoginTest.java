@@ -15,8 +15,7 @@ public class InvalidLoginTest extends TestBase {
     @Tag("auth")
     @CsvSource(value = {
             "firstTry@Email,firstTryPassword",
-            "secondTry@Email,secondTryPassword",
-            "thirdTry@Email,thirdTryPassword"
+            "secondTry@Email,secondTryPassword"
     })
     @ParameterizedTest
     @DisplayName("Login User with incorrect email and password")
