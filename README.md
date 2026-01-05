@@ -53,6 +53,7 @@
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.png" width="50"/></a>
 </div>
 
+
 Автотесты в этом проекте написаны на Java с использованием фреймворка [Selenide](https://selenide.org/).\
 <code>Gradle</code> — используется как инструмент автоматизации сборки.\
 <code>JUnit5</code> — для выполнения тестов.\
