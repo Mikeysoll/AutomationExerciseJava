@@ -138,7 +138,7 @@ clean test
 > Сборка с параметрами позволяет перед запуском изменить параметры для сборки (путем выбора из списка или прямым указанием значения).
 
 <p align="center">
-<img src="images/screenshots/JenkinsJob.PNG"/>
+<img src="images/screenshots/JenkinsJob.png"/>
 </p>
 
 
