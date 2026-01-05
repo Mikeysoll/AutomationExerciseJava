@@ -135,6 +135,11 @@ clean test
 <a id="jenkins"></a>
 ## Запуск тестов в <a target="_blank" href="https://jenkins.autotests.cloud/job/AutomationExerciseJava/"> Jenkins </a>
 
+> Сборка с параметрами позволяет перед запуском изменить параметры для сборки (путем выбора из списка или прямым указанием значения).
+
+<p align="center">
+<img src="images/screenshots/JenkinsJob.PNG"/>
+</p>
 
 
 
