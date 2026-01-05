@@ -141,8 +141,12 @@ clean test
 <img src="images/screenshots/JenkinsJob.png"/>
 </p>
 
+<a id="allure"></a>
+## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-Jenny_Ndbn-java-24-webinar-final-project/8/allure/"> Allure report </a> 
 
+### Основное окно
 
-
-
+<p align="center">
+<img src="images/screenshots/AllureOverview.png">
+</p>
 
