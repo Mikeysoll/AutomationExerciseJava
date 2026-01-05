@@ -1,6 +1,8 @@
 package base;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import data.TestData;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -33,8 +35,8 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.remote = System.getProperty("remote",
-                "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+       /* Configuration.remote = System.getProperty("remote",
+                "https://user1:1234@selenoid.autotests.cloud/wd/hub");*/
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.of(
@@ -42,6 +44,9 @@ public class TestBase {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
+
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
     }
 
     @BeforeEach
@@ -59,11 +64,8 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource("Page Source");
         Attach.browserConsoleLogs();
-    }
-
-    @AfterAll
-    static void closeBrowser() {
         Attach.addVideo();
         closeWebDriver();
+
     }
 }
