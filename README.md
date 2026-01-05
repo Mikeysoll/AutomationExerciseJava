@@ -4,6 +4,7 @@
 
 * <a href="#annotation">Описание</a>
 * <a href="#tools">Технологии и инструменты</a>
+* <a href="#allureRes">Технологии и инструменты</a>
 * <a href="#cases">Реализованные проверки</a>
 * <a href="#console">Запуск тестов из терминала</a>
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
@@ -66,6 +67,7 @@
 <code>Jira</code> — как инструмент управления проектом и таск-трекер.\
 <code>Telegram Bot</code> — для уведомлений о результатах тестирования.
 
+<a id="allureRes"></a>
 ## Allure-отчет
 
 Allure-отчет включает в себя:
