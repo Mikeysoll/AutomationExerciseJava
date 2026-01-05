@@ -157,3 +157,7 @@ clean test
 </p>
 
 ### Графики
+
+<p align="center">
+<img src="images/screenshots/AllureGraphs.png">
+</p>
