@@ -133,7 +133,7 @@ clean test
 > `${REMOTE_URL}` - адрес удаленного сервера, на котором будут запускаться тесты.
 
 <a id="jenkins"></a>
-## Запуск тестов в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-Jenny_Ndbn-java-24-webinar-final-project/"> Jenkins </a>
+## Запуск тестов в <a target="_blank" href="https://jenkins.autotests.cloud/job/AutomationExerciseJava/"> Jenkins </a>
 
 
 
