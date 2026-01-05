@@ -1,3 +1,19 @@
+<h1 >Проект автоматизации тестирования для учебного проекта <a href="https://automationexercise.com">AutomationExercise</a></h1>
+
+## Содержание
+
+* <a href="#annotation">Описание</a>
+* <a href="#tools">Технологии и инструменты</a>
+* <a href="#cases">Реализованные проверки</a>
+* <a href="#console">Запуск тестов из терминала</a>
+* <a href="#jenkins">Запуск тестов в Jenkins</a>
+* <a href="#allure">Отчеты в Allure</a>
+* <a href="#testops">Интеграция с Allure TestOps</a>
+* <a href="#testops">Интеграция с Jira</a>
+* <a href="#telegram">Уведомления в Telegram с использованием бота</a>
+* <a href="#video">Пример прогона теста в Selenoid</a>
+
+<a id="annotation"></a>
 ## Описание
 Тестовый проект состоит из веб-тестов (UI), тестов API и мобильных тестов (Android).\
 Краткий список интересных фактов о проекте:
