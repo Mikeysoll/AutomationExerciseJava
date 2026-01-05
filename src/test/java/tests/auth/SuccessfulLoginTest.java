@@ -15,6 +15,7 @@ public class SuccessfulLoginTest extends TestBase {
     @CsvSource({
             "Test, testaccount@test.ru, testaccount@test.ru"
     })
+    @Tag("ui")
     @Tag("auth")
     void successfulLoginTest(String userName, String userEmail, String userPassword) {
 

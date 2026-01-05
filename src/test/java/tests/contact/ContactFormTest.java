@@ -12,6 +12,7 @@ public class ContactFormTest extends TestBase {
     private static final String SUCCES_MESSAGE = "Success! Your details have been submitted successfully.";
 
     @Test
+    @Tag("ui")
     @Tag("contact")
     @DisplayName("Contact Us Form Test")
     public void contactFormTest() {

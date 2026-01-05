@@ -10,6 +10,7 @@ import static io.qameta.allure.Allure.step;
 public class SubscriptionTest extends TestBase {
 
     @Test
+    @Tag("ui")
     @Tag("products")
     @DisplayName("Verify Subscription in home page")
     public void verifySubscriptionTest(){

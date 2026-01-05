@@ -15,6 +15,7 @@ public class LogoutTest extends TestBase {
     @CsvSource({
             "Test, testaccount@test.ru, testaccount@test.ru"
     })
+    @Tag("ui")
     @Tag("auth")
     void logoutTest(String userName, String userEmail, String userPassword) {
 

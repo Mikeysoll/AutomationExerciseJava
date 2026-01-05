@@ -10,6 +10,7 @@ import static io.qameta.allure.Allure.step;
 public class ProductDetailTest extends TestBase {
 
     @Test
+    @Tag("ui")
     @Tag("products")
     @DisplayName("Verify All Products and product detail page")
     public void verifyAllProductsAndProductDetailPageTest() {

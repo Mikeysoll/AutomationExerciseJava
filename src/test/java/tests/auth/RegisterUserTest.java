@@ -11,6 +11,7 @@ public class RegisterUserTest extends TestBase {
 
 
     @Test
+    @Tag("ui")
     @Tag("auth")
     @DisplayName("Verify that home page is visible successfully")
     public void registerUserTest() {

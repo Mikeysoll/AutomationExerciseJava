@@ -18,6 +18,7 @@ public class ProductSearchTest extends TestBase {
 
     @MethodSource("productNames")
     @ParameterizedTest
+    @Tag("ui")
     @Tag("products")
     @DisplayName("Search Product")
     void searchProductTest(String productName) {

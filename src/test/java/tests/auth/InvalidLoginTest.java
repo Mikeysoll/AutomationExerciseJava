@@ -12,6 +12,7 @@ public class InvalidLoginTest extends TestBase {
 
     private static final String INVALID_LOGIN_ERROR = "Your email or password is incorrect!";
 
+    @Tag("ui")
     @Tag("auth")
     @CsvSource(value = {
             "firstTry@Email,firstTryPassword",

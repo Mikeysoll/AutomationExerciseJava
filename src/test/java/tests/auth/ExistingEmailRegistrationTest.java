@@ -14,6 +14,7 @@ public class ExistingEmailRegistrationTest extends TestBase {
 
     @ValueSource(strings = {"TestAccount@yandex.ru"})
     @ParameterizedTest
+    @Tag("ui")
     @Tag("auth")
     @DisplayName("Register User with existing email")
     public void existingEmailRegistrationTest(String email) {

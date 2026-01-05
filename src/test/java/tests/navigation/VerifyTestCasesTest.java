@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class VerifyTestCasesTest extends TestBase {
 
     @Test
+    @Tag("ui")
     @Tag("navigation")
     @DisplayName("Verify user is navigated to test cases page successfully")
     public void testCasesPageSuccessfully() {
