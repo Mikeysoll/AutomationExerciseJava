@@ -168,3 +168,11 @@ clean test
 <p>
 <img src="images/screenshots/TelegramBot.png">
 </p>
+
+<a id="video"></a>
+## Пример прогона теста в Selenoid
+
+> К каждому web-тесту в отчете прилагается видео
+<p align="center">
+  <img src="images/video/Video_ui_test.gif">
+</p>
