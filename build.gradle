@@ -45,20 +45,26 @@ tasks.withType(Test) {
     }
 }
 
-task first_test(type: Test) {
+task authTest(type: Test) {
     useJUnitPlatform {
-        includeTags 'first'
+        includeTags 'auth'
     }
 }
 
-task second_test(type: Test) {
+task contactTest(type: Test) {
     useJUnitPlatform {
-        includeTags 'second'
+        includeTags 'contact'
     }
 }
 
-task third_test(type: Test) {
+task productsTest(type: Test) {
     useJUnitPlatform {
-        includeTags 'third'
+        includeTags 'products'
+    }
+}
+
+task navigationTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'navigation'
     }
 }
