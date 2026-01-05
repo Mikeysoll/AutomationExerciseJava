@@ -15,7 +15,7 @@ public class ProductsPage {
             searchInput = $("#search_product"),
             searchButton = $("#submit_search"),
             searchedProductsHeader = $(byText("Searched Products")),
-            viewProductButton = $("a[href='/product_details/1']"),
+            viewProductButton = $("a[href='/product_details/3']"),
             productInformation = $(".product-information"),
             addToCardButton = $("[type=\"button\"]"),
             quantityField = $("#quantity");
