@@ -17,7 +17,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
-import com.codeborne.selenide.Configuration;
+import static com.codeborne.selenide.Configuration.*;
 
 public class TestBase {
     protected ProductsPage productsPage = new ProductsPage();
@@ -30,12 +30,12 @@ public class TestBase {
 
     @BeforeAll
     static void configureBrowser() {
-        Configuration.baseUrl = "https://automationexercise.com";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.remote = System.getProperty("remote",
+        baseUrl = "https://automationexercise.com";
+        pageLoadStrategy = "eager";
+        browser = System.getProperty("browser", "chrome");
+        browserVersion = System.getProperty("browserVersion", "128.0");
+        browserSize = System.getProperty("browserSize", "1920x1080");
+        remote = System.getProperty("remote",
                 "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -43,7 +43,7 @@ public class TestBase {
                 "enableVNC", true,
                 "enableVideo", true
         ));
-        Configuration.browserCapabilities = capabilities;
+        browserCapabilities = capabilities;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
