@@ -5,10 +5,19 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import pages.AccountInfoPage;
+import pages.HomePage;
+import pages.SignupLoginPage;
+import pages.components.Header;
 
 import static io.qameta.allure.Allure.step;
 
 public class SuccessfulLoginTest extends TestBase {
+
+    SignupLoginPage loginPage = new SignupLoginPage();
+    HomePage homePage = new HomePage();
+    AccountInfoPage accountInfoPage = new AccountInfoPage();
+    Header header = new Header();
 
     @ParameterizedTest
     @DisplayName("Login User with correct email and password")

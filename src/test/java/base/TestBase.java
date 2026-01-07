@@ -3,7 +3,6 @@ package base;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import data.TestData;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,16 +15,11 @@ import java.util.Map;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Configuration.*;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
-    protected ProductsPage productsPage = new ProductsPage();
-    protected SignupLoginPage loginPage = new SignupLoginPage();
-    protected HomePage homePage = new HomePage();
-    protected AccountInfoPage accountInfoPage = new AccountInfoPage();
-    protected ContactPage contactPage = new ContactPage();
-    protected Header header = new Header();
+
     protected TestData testData;
 
     @BeforeAll
@@ -35,8 +29,8 @@ public class TestBase {
         browser = System.getProperty("browser", "chrome");
         browserVersion = System.getProperty("browserVersion", "128.0");
         browserSize = System.getProperty("browserSize", "1920x1080");
-        remote = System.getProperty("remote",
-                "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        /*remote = System.getProperty("remote",
+                "https://user1:1234@selenoid.autotests.cloud/wd/hub");*/
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.of(
@@ -45,7 +39,6 @@ public class TestBase {
         ));
         browserCapabilities = capabilities;
 
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
     }
 
@@ -57,6 +50,8 @@ public class TestBase {
             $(".fc-cta-consent").should(appear, Duration.ofSeconds(10)).click();
         } catch (Throwable ignored) {}
         $(".logo").shouldBe(visible);
+
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterEach

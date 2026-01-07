@@ -4,10 +4,17 @@ import base.TestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import pages.HomePage;
+import pages.ProductsPage;
+import pages.components.Header;
 
 import static io.qameta.allure.Allure.step;
 
 public class ProductDetailTest extends TestBase {
+
+    ProductsPage productsPage = new ProductsPage();
+    Header header = new Header();
+    HomePage homePage = new HomePage();
 
     @Test
     @Tag("ui")

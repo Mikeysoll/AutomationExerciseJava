@@ -5,12 +5,17 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import pages.SignupLoginPage;
+import pages.components.Header;
 
 import static io.qameta.allure.Allure.step;
 
 public class ExistingEmailRegistrationTest extends TestBase {
 
+    protected SignupLoginPage loginPage = new SignupLoginPage();
+
     private static final String EMAIL_EXISTS_ERROR = "Email Address already exist!";
+    Header header = new Header();
 
     @ValueSource(strings = {"TestAccount@yandex.ru"})
     @ParameterizedTest

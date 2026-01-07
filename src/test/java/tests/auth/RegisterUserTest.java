@@ -4,10 +4,19 @@ import base.TestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import pages.AccountInfoPage;
+import pages.HomePage;
+import pages.SignupLoginPage;
+import pages.components.Header;
 
 import static io.qameta.allure.Allure.step;
 
 public class RegisterUserTest extends TestBase {
+
+    HomePage homePage = new HomePage();
+    AccountInfoPage accountInfoPage = new AccountInfoPage();
+    Header header = new Header();
+    SignupLoginPage loginPage = new SignupLoginPage();
 
 
     @Test
