@@ -10,8 +10,6 @@ import pages.HomePage;
 import pages.SignupLoginPage;
 import pages.components.Header;
 
-import static io.qameta.allure.Allure.step;
-
 public class SuccessfulLoginTest extends TestBase {
 
     SignupLoginPage loginPage = new SignupLoginPage();
@@ -27,18 +25,12 @@ public class SuccessfulLoginTest extends TestBase {
     @Tag("ui")
     @Tag("auth")
     void successfulLoginTest(String userName, String userEmail, String userPassword) {
-
-        step("Verify that home page is visible", () ->
-                homePage.checkHomePageVisible()
-        );
-
-        step("Open Registration page and login", () -> {
-            header.clickSignupLoginButton();
-            loginPage.isLoginHeaderVisible()
-                    .setLoginEmail(userEmail)
-                    .setLoginPassword(userPassword)
-                    .clickLoginButton();
-            accountInfoPage.checkAccountName(userName);
-        });
+        homePage.checkHomePageVisible();
+        header.clickSignupLoginButton();
+        loginPage.isLoginHeaderVisible()
+                .setLoginEmail(userEmail)
+                .setLoginPassword(userPassword)
+                .clickLoginButton();
+        accountInfoPage.checkAccountName(userName);
     }
 }

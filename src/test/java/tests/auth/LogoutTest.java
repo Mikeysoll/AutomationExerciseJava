@@ -10,8 +10,6 @@ import pages.HomePage;
 import pages.SignupLoginPage;
 import pages.components.Header;
 
-import static io.qameta.allure.Allure.step;
-
 public class LogoutTest extends TestBase {
 
     HomePage homePage = new HomePage();
@@ -27,28 +25,13 @@ public class LogoutTest extends TestBase {
     @Tag("ui")
     @Tag("auth")
     void logoutTest(String userName, String userEmail, String userPassword) {
-
-        step("Verify that home page is visible", () ->
-                homePage.checkHomePageVisible()
-        );
-
-        step("Open login page", () -> {
-            header.clickSignupLoginButton();
-            loginPage.isLoginHeaderVisible();
-        });
-
-        step("Enter correct email address and password and login", () -> {
-            loginPage.setLoginEmail(userEmail)
-                    .setLoginPassword(userPassword)
-                    .clickLoginButton();
-        });
-
-        step("Verify user is logged in", () ->
-                accountInfoPage.checkAccountName(userName)
-        );
-
-        step("Logout user", () ->
-                header.clickLogoutButton()
-        );
+        homePage.checkHomePageVisible();
+        header.clickSignupLoginButton();
+        loginPage.isLoginHeaderVisible()
+                .setLoginEmail(userEmail)
+                .setLoginPassword(userPassword)
+                .clickLoginButton();
+        accountInfoPage.checkAccountName(userName);
+        header.clickLogoutButton();
     }
 }

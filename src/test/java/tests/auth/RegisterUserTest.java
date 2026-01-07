@@ -9,8 +9,6 @@ import pages.HomePage;
 import pages.SignupLoginPage;
 import pages.components.Header;
 
-import static io.qameta.allure.Allure.step;
-
 public class RegisterUserTest extends TestBase {
 
     HomePage homePage = new HomePage();
@@ -18,67 +16,35 @@ public class RegisterUserTest extends TestBase {
     Header header = new Header();
     SignupLoginPage loginPage = new SignupLoginPage();
 
-
     @Test
     @Tag("ui")
     @Tag("auth")
     @DisplayName("Verify that home page is visible successfully")
     public void registerUserTest() {
-
-        step("Verify that home page is visible ", () ->
-                homePage.checkHomePageVisible()
-        );
-
-        step("Open Registration page", () -> {
-            header.clickSignupLoginButton();
-            loginPage.checkSignupHeaderVisible();
-        });
-
-        step("Enter name and email address", () -> {
-            loginPage.setSignupName(testData.fullName);
-            loginPage.setSignupEmail(testData.email);
-        });
-
-        step("Click on signup button", () ->
-                loginPage.clickSignupButton()
-        );
-
-        step("Verify that 'ENTER ACCOUNT INFORMATION' is visible", () ->
-                accountInfoPage.checkAccountInfoPageVisible()
-        );
-
-        step("Fill account details", () -> {
-            accountInfoPage.setPassword(testData.password)
-                    .setDateOfBirth(
-                            testData.dayOfBirth,
-                            testData.monthOfBirth,
-                            testData.yearOfBirth
-                    );
-            accountInfoPage.newsletterAgree()
-                    .selectGenderMale()
-                    .setFirstName(testData.firstName)
-                    .setLastName(testData.lastName)
-                    .setCompany(testData.company)
-                    .setAddress(testData.address)
-                    .selectCountry("India")
-                    .setState(testData.state)
-                    .setCity(testData.city)
-                    .setZipcode(testData.zipcode)
-                    .setMobileNumber(testData.mobileNumber);
-        });
-
-        step("Create account", () -> {
-            accountInfoPage.clickCreateAccountButton();
-        });
-
-        step("Verify account was created and user is logged in", () -> {
-            accountInfoPage.checkAccountCreatedStatus()
-                    .checkAccountCreated()
-                    .checkAccountName(testData.fullName);
-        });
-
-        step("Delete account", () -> {
-            header.deleteAccount();
-        });
+        homePage.checkHomePageVisible();
+        header.clickSignupLoginButton();
+        loginPage.checkSignupHeaderVisible()
+                .setSignupName(testData.fullName)
+                .setSignupEmail(testData.email)
+                .clickSignupButton();
+        accountInfoPage.checkAccountInfoPageVisible()
+                .setPassword(testData.password)
+                .setDateOfBirth(testData.dayOfBirth, testData.monthOfBirth, testData.yearOfBirth)
+                .newsletterAgree()
+                .selectGenderMale()
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setCompany(testData.company)
+                .setAddress(testData.address)
+                .selectCountry("India")
+                .setState(testData.state)
+                .setCity(testData.city)
+                .setZipcode(testData.zipcode)
+                .setMobileNumber(testData.mobileNumber)
+                .clickCreateAccountButton()
+                .checkAccountCreatedStatus()
+                .checkAccountCreated()
+                .checkAccountName(testData.fullName);
+        header.deleteAccount();
     }
 }

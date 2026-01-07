@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import pages.ContactPage;
 import pages.components.Header;
 
-import static io.qameta.allure.Allure.step;
-
 public class ContactFormTest extends TestBase {
 
     private static final String SUCCES_MESSAGE = "Success! Your details have been submitted successfully.";
@@ -20,31 +18,15 @@ public class ContactFormTest extends TestBase {
     @Tag("contact")
     @DisplayName("Contact Us Form Test")
     public void contactFormTest() {
-
-        step("Click on 'Contact Us' button", () ->
-                header.clickContactUsButton()
-        );
-
-        step("Verify that \"Get In Touch\" is visible", () ->
-                contactPage.checkContactHeaderVisible()
-        );
-
-        step("Enter user information", () -> {
-            contactPage.setName(testData.fullName)
-                    .setEmail(testData.email)
-                    .setSubject(testData.subject)
-                    .setMessage(testData.message);
-        });
-
-        step("Upload file", () -> {
-            contactPage.uploadFile("img/test.jpg");
-        });
-
-        step("Submit the form and verify success", () -> {
-            contactPage.clickSubmitButton()
-                    .checkSuccessMessage(SUCCES_MESSAGE)
-                    .clickHomeButton();
-        });
-
+        header.clickContactUsButton();
+        contactPage.checkContactHeaderVisible();
+        contactPage.setName(testData.fullName)
+                .setEmail(testData.email)
+                .setSubject(testData.subject)
+                .setMessage(testData.message);
+        contactPage.uploadFile("img/test.jpg");
+        contactPage.clickSubmitButton()
+                .checkSuccessMessage(SUCCES_MESSAGE)
+                .clickHomeButton();
     }
 }

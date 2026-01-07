@@ -8,8 +8,6 @@ import pages.HomePage;
 import pages.ProductsPage;
 import pages.components.Header;
 
-import static io.qameta.allure.Allure.step;
-
 public class ProductDetailTest extends TestBase {
 
     ProductsPage productsPage = new ProductsPage();
@@ -21,22 +19,13 @@ public class ProductDetailTest extends TestBase {
     @Tag("products")
     @DisplayName("Verify All Products and product detail page")
     public void verifyAllProductsAndProductDetailPageTest() {
-
-        step("Open home page and verify it is visible", () ->
-                homePage.checkHomePageVisible()
-        );
-
-        step("Navigate to ALL PRODUCTS page and verify products are visible", () -> {
-            header.clickProductsButton();
-            productsPage.checkProductHeaderVisible()
-                    .verifyAllProductsVisible();
-        });
-
-        step("Open first product details and verify information", () -> {
-            productsPage.openProductDetails()
-                    .checkProductInformation()
-                    .checkAddToCardButton()
-                    .checkQuantityField();
-        });
+        homePage.checkHomePageVisible();
+        header.clickProductsButton();
+        productsPage.checkProductHeaderVisible()
+                .verifyAllProductsVisible();
+        productsPage.openProductDetails()
+                .checkProductInformation()
+                .checkAddToCardButton()
+                .checkQuantityField();
     }
 }

@@ -10,8 +10,6 @@ import pages.components.Header;
 
 import java.util.stream.Stream;
 
-import static io.qameta.allure.Allure.step;
-
 public class ProductSearchTest extends TestBase {
 
     ProductsPage productsPage = new ProductsPage();
@@ -27,25 +25,10 @@ public class ProductSearchTest extends TestBase {
     @Tag("products")
     @DisplayName("Search Product")
     void searchProductTest(String productName) {
-
-        step("Click on Products link in header", () ->
-                header.clickProductsButton()
-        );
-
-        step("Verify Products header is visible", () ->
-                productsPage.checkProductHeaderVisible()
-        );
-
-        step("Search for product: " + productName, () ->
-                productsPage.searchProduct(productName)
-        );
-
-        step("Verify Search header is visible", () ->
-                productsPage.checkSearchHeaderVisible()
-        );
-
-        step("Verify all products are visible", () ->
-                productsPage.verifyAllProductsVisible()
-        );
+        header.clickProductsButton();
+        productsPage.checkProductHeaderVisible()
+                .searchProduct(productName)
+                .checkSearchHeaderVisible()
+                .verifyAllProductsVisible();
     }
 }

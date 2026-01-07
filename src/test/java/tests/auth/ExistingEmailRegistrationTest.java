@@ -8,12 +8,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 import pages.SignupLoginPage;
 import pages.components.Header;
 
-import static io.qameta.allure.Allure.step;
-
 public class ExistingEmailRegistrationTest extends TestBase {
 
     protected SignupLoginPage loginPage = new SignupLoginPage();
-
     private static final String EMAIL_EXISTS_ERROR = "Email Address already exist!";
     Header header = new Header();
 
@@ -24,28 +21,11 @@ public class ExistingEmailRegistrationTest extends TestBase {
     @DisplayName("Register User with existing email")
     public void existingEmailRegistrationTest(String email) {
 
-        step("Click on Signup/Login link in header", () ->
-                header.clickSignupLoginButton()
-        );
-
-        step("Verify Signup header is visible", () ->
-                loginPage.checkSignupHeaderVisible()
-        );
-
-        step("Set signup name", () ->
-                loginPage.setSignupName(testData.fullName)
-        );
-
-        step("Set signup email", () ->
-                loginPage.setSignupEmail(email)
-        );
-
-        step("Click Signup button", () ->
-                loginPage.clickSignupButton()
-        );
-
-        step("Verify error message for existing email", () ->
-                loginPage.checkSignUpErrorMessage(EMAIL_EXISTS_ERROR)
-        );
+        header.clickSignupLoginButton();
+        loginPage.checkSignupHeaderVisible()
+                .setSignupName(testData.fullName)
+                .setSignupEmail(email)
+                .clickSignupButton()
+                .checkSignUpErrorMessage(EMAIL_EXISTS_ERROR);
     }
 }
