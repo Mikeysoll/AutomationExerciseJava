@@ -180,3 +180,7 @@ Allure-отчет включает в себя:
 <p align="center">
   <img src="images/video/Video_ui_test.gif">
 </p>
+
+## Контакты
+📧 [solovev02@ya.ru](mailto:solovev02@ya.ru)
+💬 @mikeysoll
