@@ -3,8 +3,7 @@
 ## Содержание
 
 * <a href="#annotation">Описание</a>
-* <a href="#tools">Технологии и инструменты</a>
-* <a href="#allureRes">Технологии и инструменты</a>
+* <a href="#tools">Инструменты</a>
 * <a href="#cases">Реализованные проверки</a>
 * <a href="#console">Запуск тестов из терминала</a>
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
@@ -120,7 +119,7 @@ clean test
 </p>
 
 <a id="allure"></a>
-## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-Jenny_Ndbn-java-24-webinar-final-project/8/allure/"> Allure report </a> 
+## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/AutomationExerciseJava/"> Allure report </a> 
 
 Allure-отчет включает в себя:
 
