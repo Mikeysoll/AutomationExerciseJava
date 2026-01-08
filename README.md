@@ -9,8 +9,6 @@
 * <a href="#console">Запуск тестов из терминала</a>
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
 * <a href="#allure">Отчеты в Allure</a>
-* <a href="#testops">Интеграция с Allure TestOps</a>
-* <a href="#testops">Интеграция с Jira</a>
 * <a href="#telegram">Уведомления в Telegram с использованием бота</a>
 * <a href="#video">Пример прогона теста в Selenoid</a>
 
