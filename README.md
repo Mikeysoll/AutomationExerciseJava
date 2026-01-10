@@ -3,31 +3,21 @@
 ## Содержание
 
 * <a href="#annotation">Описание</a>
-* <a href="#tools">Технологии и инструменты</a>
-* <a href="#allureRes">Технологии и инструменты</a>
+* <a href="#tools">Инструменты</a>
 * <a href="#cases">Реализованные проверки</a>
 * <a href="#console">Запуск тестов из терминала</a>
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
 * <a href="#allure">Отчеты в Allure</a>
-* <a href="#testops">Интеграция с Allure TestOps</a>
-* <a href="#testops">Интеграция с Jira</a>
 * <a href="#telegram">Уведомления в Telegram с использованием бота</a>
 * <a href="#video">Пример прогона теста в Selenoid</a>
 
 <a id="annotation"></a>
 ## Описание
-Тестовый проект состоит из веб-тестов (UI), тестов API.\
+Тестовый проект состоит из веб-тестов.
 Содержание проекта:
 - [x] `Page Object` проектирование
 - [x] Возможность локального и удалённого запуска тестов
-- [x] Возможность запуска как всех тестов, так и отдельно WEB, API
-- [x] Использование `Faker` для генерации данных
-- [x] Использование `Lombok` для моделей в API тестах
-- [x] Использование request/response спецификаций для API тестов
 - [x] Custom Allure listener для API requests/responses логов
-- [x] Интеграция с `Allure TestOps`
-- [x] Возможность запуска тестов напрямую из `Allure TestOps`
-- [x] Интеграция с `Jira`
 - [x] Автотесты оформлены как тестовая документация посредством аннотаций `Allure`
 
 
@@ -42,14 +32,8 @@
 <a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="images/logo/JUnit5.png" width="50"/></a>
 <a href="https://selenide.org/"><img alt="Selenide" height="50" src="images/logo/Selenide.png" width="50"/></a>
 <a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="images/logo/Selenoid.png" width="50"/></a>
-<a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="images/logo/RestAssured.png" width="50"/></a>
-<a href="https://www.browserstack.com/"><img alt="Browserstack" height="50" src="images/logo/Browserstack.png" width="50"/></a>
-<a href="https://appium.io/"><img alt="Appium" height="50" src="images/logo/Appium.png" width="50"/></a>
-<a href="https://developer.android.com/studio"><img alt="Android Studio" height="50" src="images/logo/AndroidStudio.png" width="50"/></a>
 <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="images/logo/Jenkins.png" width="50"/></a>
 <a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/AllureReports.png" width="50"/></a>
-<a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="images/logo/AllureTestOps.svg" width="50"/></a>
-<a href="https://www.atlassian.com/software/jira"><img alt="Jira" height="50" src="images/logo/Jira.png" width="50"/></a>  
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.png" width="50"/></a>
 </div>
 
@@ -135,7 +119,7 @@ clean test
 </p>
 
 <a id="allure"></a>
-## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/017-Jenny_Ndbn-java-24-webinar-final-project/8/allure/"> Allure report </a> 
+## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/AutomationExerciseJava/"> Allure report </a> 
 
 Allure-отчет включает в себя:
 
@@ -180,3 +164,7 @@ Allure-отчет включает в себя:
 <p align="center">
   <img src="images/video/Video_ui_test.gif">
 </p>
+
+## Контакты
+📧 [solovev02@ya.ru](mailto:solovev02@ya.ru)
+💬 @mikeysoll
