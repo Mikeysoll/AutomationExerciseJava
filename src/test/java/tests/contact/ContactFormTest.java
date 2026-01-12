@@ -19,13 +19,13 @@ public class ContactFormTest extends TestBase {
     @DisplayName("Contact Us Form Test")
     public void contactFormTest() {
         header.clickContactUsButton();
-        contactPage.checkContactHeaderVisible();
-        contactPage.setName(testData.fullName)
+        contactPage.checkContactHeaderVisible()
+                .setName(testData.fullName)
                 .setEmail(testData.email)
                 .setSubject(testData.subject)
-                .setMessage(testData.message);
-        contactPage.uploadFile("img/test.jpg");
-        contactPage.clickSubmitButton()
+                .setMessage(testData.message)
+                .uploadFile("img/test.jpg")
+                .clickSubmitButton()
                 .checkSuccessMessage(SUCCES_MESSAGE)
                 .clickHomeButton();
     }
